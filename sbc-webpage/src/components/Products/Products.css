@@ -1,0 +1,26 @@
+.prodParentDiv{
+    box-sizing: border-box;
+width: 1427px;
+height: 901px;
+overflow: visible;
+background-image: url('https://shidas-broom-closet.s3.us-east-2.amazonaws.com/sbc_bg+flipped.PNG');
+background-size: 100% 100%;
+background-repeat: no-repeat;
+background-position: center;
+border-radius: 10px;
+border: 1px solid #222;
+}
+
+.prodImg{
+    background-color: azure;
+}
+.prodName{
+    height: fit-content;
+    width: fit-content;
+    background-color: wheat;
+}
+.prodDescription{
+    height: fit-content;
+    width: fit-content;
+    background-color: whitesmoke;
+}

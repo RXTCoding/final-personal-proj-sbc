@@ -1,0 +1,36 @@
+header{
+    box-sizing: border-box;
+width: 1536px;
+height: 176px;
+background-color: #000000;
+overflow: visible;
+border: 3px solid #ff8c00;
+display: flex;
+}
+
+.headerH4{
+    width: 332px;
+    height: 52px;
+    overflow: hidden;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    word-break: break-word;
+    font-weight: 400;
+    font-style: normal;
+    font-family: "Titan One", serif;
+    font-size: 20px;
+    letter-spacing: 0px;
+    line-height: 1.2;
+    color: #d7730f;
+}
+
+.headerLogo{
+    width: 166px;
+height: 122px;
+overflow: visible;
+background-image:'https://shidas-broom-closet.s3.us-east-2.amazonaws.com/andinkra+symbol+strength.PNG';
+background-size: contain;
+background-repeat: no-repeat;
+background-position: center;
+}
+
