@@ -30,6 +30,9 @@ const handleLogin= ()=>{
     })
   })
 }
+const handleLogout= ()=>{
+  axios.get('/api/logout')
+}
 
     return(
       

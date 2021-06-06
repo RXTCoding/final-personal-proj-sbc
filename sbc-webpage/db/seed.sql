@@ -9,6 +9,7 @@ CREATE TABLE sbc_products (
   product_name VARCHAR(100),
   product_description VARCHAR(1000),
   product_image VARCHAR(2000)
+  price VARCHAR(50)
 );
 
 CREATE TABLE sbc_carts (
@@ -27,9 +28,9 @@ CREATE TABLE sbc_prod_cart_junct (
 -- ALTER TABLE sbc_products
 -- ADD COLUMN price VARCHAR(50);
 
---UPDATE users
---SET name = 'Matias'
---WHERE id = 1;
+-- UPDATE users
+-- SET name = 'Matias'
+-- WHERE id = 1;
 
 -- INSERT INTO
 -- sbc_products (product_name, product_description,product_image)

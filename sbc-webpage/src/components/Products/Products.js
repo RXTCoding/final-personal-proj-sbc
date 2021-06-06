@@ -46,7 +46,7 @@ const Products = (props) => {
   }
 
   return(
-    <div>
+    <div className='container'>
       <h1>Welcome to <br/> Shida's Broom Closet</h1>
       <div className='prodSerImgParent'>
             <img width='30%' height='40%' src='https://shidas-broom-closet.s3.us-east-2.amazonaws.com/Book+a+Reading.PNG' alt='book a reading'/>
@@ -56,17 +56,18 @@ const Products = (props) => {
       {products.map((product)=>{
         return(
           <section className='prodParentDiv'>
-            <div key={product.product_id}>
+            <div className='prodContainer' key={product.product_id}>
               <div className='prodImgChildDiv'>
-              <img className='prodImg' width='20%' height='30%' src={product.product_image} alt={product.product_name}/>
+              <img className='prodImg' width='50%' height='60%' src={product.product_image} alt={product.product_name}/>
               <div className='prodTextContainer'>
-              <h4 className='prodName'>{product.product_name}</h4>
+              <h2 className='prodName'>{product.product_name}</h2>
               <p className='prodDescription'>{product.product_description}</p>
+              <p className='prodPrice'>${product.price}</p>
               </div>
               <button onClick={()=> handleAddToCart(product.product_id)}>Add To Cart</button>
               </div>
             </div>
-          </section>
+            </section>
           )
         })
       }
