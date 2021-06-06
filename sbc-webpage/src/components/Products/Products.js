@@ -28,7 +28,7 @@ const Products = (props) => {
         dispatch(setCart(res.data))
       }).catch((err)=>{
         console.log(err)
-        if(err.rresponse.status===511){
+        if(err.response.status===511){
           props.history.push('/auth')
         }
       })
@@ -48,14 +48,25 @@ const Products = (props) => {
   return(
     <div>
       <h1>Welcome to <br/> Shida's Broom Closet</h1>
+      <div className='prodSerImgParent'>
+            <img width='30%' height='40%' src='https://shidas-broom-closet.s3.us-east-2.amazonaws.com/Book+a+Reading.PNG' alt='book a reading'/>
+            <img width='30%' height='40%' src='https://shidas-broom-closet.s3.us-east-2.amazonaws.com/book+a+yoga+session.PNG' alt=' book a yoga session'/>
+            <img width='30%' height='40%' src='https://shidas-broom-closet.s3.us-east-2.amazonaws.com/book+a+sound+SQR.PNG' alt= ' book a sound healing session'/>
+            </div>
       {products.map((product)=>{
         return(
-          <div className='prodParentDiv' key={product.product_id}>
-            <img className='prodImg' src={product.product_image} alt={product.product_name}/>
-            <h4 className='prodName'>{product.product_name}</h4>
-            <p className='prodDescription'>{product.product_description}</p>
-            {user && <button onClick={()=> handleAddToCart(product.product_id)}>Add To Cart</button>}
-          </div>
+          <section className='prodParentDiv'>
+            <div key={product.product_id}>
+              <div className='prodImgChildDiv'>
+              <img className='prodImg' width='20%' height='30%' src={product.product_image} alt={product.product_name}/>
+              <div className='prodTextContainer'>
+              <h4 className='prodName'>{product.product_name}</h4>
+              <p className='prodDescription'>{product.product_description}</p>
+              </div>
+              <button onClick={()=> handleAddToCart(product.product_id)}>Add To Cart</button>
+              </div>
+            </div>
+          </section>
           )
         })
       }

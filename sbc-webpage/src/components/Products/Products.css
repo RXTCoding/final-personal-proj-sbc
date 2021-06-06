@@ -8,19 +8,50 @@ background-size: 100% 100%;
 background-repeat: no-repeat;
 background-position: center;
 border-radius: 10px;
-border: 1px solid #222;
+border: 3px solid red;
+/* border: 1px solid #222; */
+margin-left: 50px;
+}
+
+h1{
+    text-align: center;
+}
+
+.prodSerImgParent{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 20px;
+}
+
+.prodImgChildDiv{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    
 }
 
 .prodImg{
     background-color: azure;
+    margin-left: auto;
+  margin-right: auto;
+text-align: center;
 }
+
+.prodTSextContainer{
+
+}
+
 .prodName{
     height: fit-content;
     width: fit-content;
     background-color: wheat;
+    margin-left: auto;
+  margin-right: auto
 }
 .prodDescription{
     height: fit-content;
     width: fit-content;
     background-color: whitesmoke;
+    margin-left: auto;
+  margin-right: auto
 }

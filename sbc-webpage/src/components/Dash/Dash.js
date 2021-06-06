@@ -1,7 +1,8 @@
 import React from 'react'
+import './Dash.css'
 const Dash = () => {
   return(
-    <div>Home </div>
+    <div className='dashParentDiv'>Home </div>
   )
 }
 export default Dash

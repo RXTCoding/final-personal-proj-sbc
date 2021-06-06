@@ -24,6 +24,13 @@ CREATE TABLE sbc_prod_cart_junct (
   quantity INT
 );
 
+-- ALTER TABLE sbc_products
+-- ADD COLUMN price VARCHAR(50);
+
+--UPDATE users
+--SET name = 'Matias'
+--WHERE id = 1;
+
 -- INSERT INTO
 -- sbc_products (product_name, product_description,product_image)
 -- VALUES

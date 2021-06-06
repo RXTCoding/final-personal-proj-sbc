@@ -1,9 +1,10 @@
 import axios from 'axios'
 // import express from 'express'
 import {useState} from 'react'
-import {setUser} from '../redux/authReducer'
+import {setUser} from '../../redux/authReducer'
 import {useDispatch} from 'react-redux'
-import {setCart} from '../redux/cartReducer'
+import {setCart} from '../../redux/cartReducer'
+import './Auth.css'
 
 const Auth = (props) => { //<-- be sure to pass props from state
   const [email, setEmail]= useState('')
@@ -32,7 +33,7 @@ const handleLogin= ()=>{
 
     return(
       
-    <div>
+    <div className='authParentDiv'>
       <h1>Auth Page</h1>
     <input value={email} onChange={(e)=>setEmail(e.target.value)}/>
     <input value={password} onChange={(e)=>setPassword(e.target.value)}/>

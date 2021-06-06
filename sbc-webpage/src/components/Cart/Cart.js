@@ -45,7 +45,7 @@ const Cart = (props) => {
     }
   }
   return(
-    <div>
+    <div className='cartParentDiv'>
       <h1>Cart Page</h1>
       {cart.map((product)=>{
         return(

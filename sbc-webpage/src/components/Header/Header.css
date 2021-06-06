@@ -6,6 +6,8 @@ background-color: #000000;
 overflow: visible;
 border: 3px solid #ff8c00;
 display: flex;
+padding: 20px;
+justify-content: space-evenly;
 }
 
 .headerH4{
@@ -17,11 +19,12 @@ display: flex;
     word-break: break-word;
     font-weight: 400;
     font-style: normal;
-    font-family: "Titan One", serif;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 20px;
     letter-spacing: 0px;
     line-height: 1.2;
     color: #d7730f;
+    
 }
 
 .headerLogo{
@@ -32,5 +35,33 @@ background-image:'https://shidas-broom-closet.s3.us-east-2.amazonaws.com/andinkr
 background-size: contain;
 background-repeat: no-repeat;
 background-position: center;
+}
+
+.links{
+margin-left: 20px;
+}
+
+.links{
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.links:hover {
+    background-color: transparent;
+    color: white;
+    text-decoration:underline white;
+}
+.links:link {
+    text-decoration: none;
+}
+
+.links.button {
+    text-decoration: underline;
+    }
+
+.links.active {
+    background-color: #ffffff1e;
+    color: white;
+    text-decoration: none;
 }
 
