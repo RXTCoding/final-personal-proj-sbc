@@ -53,6 +53,6 @@ app.get('/api/products', productCtrl.getProducts)
 
 //Cart
 app.get('/api/mycart', cartCtrl.getCart)
-app.post('/api/additem', cartCtrl.addToCart)
-app.delete('/api/delete/:id', cartCtrl.deleteItemFromCart)
-app.put('/api/newquantity/:id', cartCtrl.changeItemQty)
+app.put('/api/additem/:product_id', cartCtrl.addToCart)//<--param must match req.params in controller "product_id" instead of "id"
+app.delete('/api/delete/:product_id', cartCtrl.deleteItemFromCart)
+app.put('/api/newquantity/:product_id', cartCtrl.changeItemQty)

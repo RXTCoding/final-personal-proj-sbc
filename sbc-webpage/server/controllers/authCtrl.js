@@ -37,6 +37,7 @@ module.exports={
         console.log(user)
         delete user.password
         req.session.user=user
+        console.log(req.session.user)
         req.session.user.cart_id= cart.cart_id
         return res.status(200).send(req.session.user)
     },
@@ -49,9 +50,9 @@ module.exports={
 
     getUser: async(req,res)=>{
         const db = req.app.get('db')
-        const user= req.session
+        const {user}= req.session//<-- destructured user
         if(!user){
-        return res.status(211).send('user not found')
+        return res.status(404).send('user not found')
         }
             db.cart.get_cart_items(user.cart_id).then((cart)=>{
                 res.status(200).send({user, cart})

@@ -10,7 +10,7 @@ export default (
     <Switch>
         <Route exact path ='/' component={Dash}/>
         <Route path = '/auth' component={Auth}/>
-        <Route path= '/cart' component= {Cart}/>
+        <Route path= '/mycart' component= {Cart}/>
         <Route path = '/products' component= {Products}/>
         <Route path= '/logout' component={Auth}/>
     </Switch>

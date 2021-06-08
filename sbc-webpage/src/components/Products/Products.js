@@ -4,6 +4,7 @@ import {useEffect} from 'react'
 import { useSelector } from 'react-redux'
 import {useDispatch} from 'react-redux'
 import {setCart} from '../../redux/cartReducer'
+import React from 'react'
 import "./Products.css"
 
 const Products = (props) => {
@@ -16,14 +17,18 @@ const Products = (props) => {
     axios.get('/api/products')
     .then((res)=>{
       setProducts(res.data)
+      console.log(res.data,"this is res data on products.js")
     }).catch(err=> console.log(err))
   }, [])
 
   const handleAddToCart = (product_id)=> {
-    const product=cart.find((product)=> product.product_id=== product_id)
-    console.log(product)
+    console.log(product_id)
+    console.log(cart)
+    const product = cart.find((product)=> product.product_id=== product_id) //<-- from cart. to products.
+    console.log(product,'this is the product')
     if(!product){
-      axios.post(`/api/cart/${product_id}`)
+      console.log(product)
+      axios.put(`/api/additem/${product_id}`)//<---mycart
       .then((res)=>{
         dispatch(setCart(res.data))
       }).catch((err)=>{
@@ -33,7 +38,7 @@ const Products = (props) => {
         }
       })
     }else{
-      axios.put(`/api/cart/${product_id}`, {quantity: product.quantity+1})
+      axios.put(`/api/newquantity/${product_id}`, {quantity: product.quantity+1})
       .then((res)=>{
         dispatch (setCart(res.data))
       }).catch(err=>{
@@ -48,11 +53,22 @@ const Products = (props) => {
   return(
     <div className='container'>
       <h1>Welcome to <br/> Shida's Broom Closet</h1>
-      <div className='prodSerImgParent'>
-            <img width='30%' height='40%' src='https://shidas-broom-closet.s3.us-east-2.amazonaws.com/Book+a+Reading.PNG' alt='book a reading'/>
-            <img width='30%' height='40%' src='https://shidas-broom-closet.s3.us-east-2.amazonaws.com/book+a+yoga+session.PNG' alt=' book a yoga session'/>
-            <img width='30%' height='40%' src='https://shidas-broom-closet.s3.us-east-2.amazonaws.com/book+a+sound+SQR.PNG' alt= ' book a sound healing session'/>
-            </div>
+      <section className='prodSerImgParent'>
+        <div className='bookSerDivs'>
+        <button className='serviceButton'>Book a Card Reading</button>
+        <img className='prodSerImg' width='350px' height='350px' src='https://shidas-broom-closet.s3.us-east-2.amazonaws.com/Book+a+Reading.PNG' alt='book a reading'/>
+        </div>
+
+        <div className='bookSerDivs'>
+        <button className='serviceButton'>Book a Yoga Session</button>
+        <img className='prodSerImg' width='350px' height='350px' src='https://shidas-broom-closet.s3.us-east-2.amazonaws.com/book+a+yoga+session.PNG' alt=' book a yoga session'/>
+        </div>
+
+        <div className='bookSerDivs'>
+        <button className='serviceButton'>Book a Sound Bath</button>
+        <img className='prodSerImg' width='350px' height='350px' src='https://shidas-broom-closet.s3.us-east-2.amazonaws.com/book+a+sound+SQR.PNG' alt= ' book a sound healing session'/>
+        </div>
+      </section>
       {products.map((product)=>{
         return(
           <section className='prodParentDiv'>
@@ -64,7 +80,7 @@ const Products = (props) => {
               <p className='prodDescription'>{product.product_description}</p>
               <p className='prodPrice'>${product.price}</p>
               </div>
-              <button onClick={()=> handleAddToCart(product.product_id)}>Add To Cart</button>
+              {user && <button className='prodButton' onClick={()=> handleAddToCart(product.product_id)}>Add To Cart</button>}
               </div>
             </div>
             </section>

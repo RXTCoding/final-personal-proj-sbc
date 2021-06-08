@@ -20,7 +20,7 @@ const Header = () => {
       <Link to='/' className='links'>Home <GiGreatPyramid/></Link> {/* <--- Changed name of 'Dash' to 'Home' */}
       <Link to='/auth' className='links'>Login <GiEgyptianProfile/></Link>
       <Link to='/products' className='links'>Products <GiCrystalGrowth/></Link>
-      <Link to='/carts' className='links'>Cart <FaShoppingCart /></Link> 
+      <Link to='/mycart' className='links'>Cart <FaShoppingCart /></Link> 
       <Link to='/auth' className='links' onClick ={handleLogout}>Log Out <GiUfo/></Link>
     </header>
   )

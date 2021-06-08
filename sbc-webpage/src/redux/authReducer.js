@@ -1,8 +1,8 @@
 const initialState={
-    user:null
+    user: null
 }
 
-const SET_USER= 'SET_USER'
+const SET_USER= "SET_USER"
 
 //action type 
 export function setUser(user){
@@ -16,7 +16,7 @@ export function setUser(user){
 export default function authReducer(state= initialState, action){
     switch(action.type){
         case SET_USER:
-            return {...state, ...action.payload}
+            return {...state, user: action.payload}
         default:
             return {...state}
     }

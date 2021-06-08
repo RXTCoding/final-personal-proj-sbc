@@ -11,7 +11,7 @@ ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <HashRouter>
-        <App /> {/* <--- so mabye i could do an inline styling background here to stretch image across the vh and vw? */}
+        <App /> 
       </HashRouter>
     </Provider>
   </React.StrictMode>,

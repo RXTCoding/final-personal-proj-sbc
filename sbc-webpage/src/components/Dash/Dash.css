@@ -1,4 +1,4 @@
-.dashParentDiv{
+/* .dashParentDiv{
     box-sizing: border-box;
 width: 1427px;
 height: 901px;
@@ -10,4 +10,108 @@ background-position: center;
 border-radius: 10px;
 border: 1px solid #222;
 margin-left: 50px;
+} */
+
+.prodParentDiv{
+    box-sizing: border-box;
+width: 450px;
+height: 600px;
+/* width: 1427px;
+height: 901px; */
+overflow: visible;
+background-image: url('https://shidas-broom-closet.s3.us-east-2.amazonaws.com/sbc_bg+flipped.PNG');
+background-size: 100% 100%;
+background-repeat: no-repeat;
+background-position: center;
+border-radius: 10px;
+/* border: 3px solid red; */
+border: 1px solid #222;
+box-shadow: 3px 3px 3px gray;
+margin: 20px;
+display: inline-block;
+flex-wrap: wrap;
+padding: 10px;
+}
+
+.container{
+    display: inline-block;
+}
+
+h1{
+    text-align: center;
+}
+
+.prodContainer{
+    display: inline-block;
+}
+
+.prodSerImgParent{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 20px;
+}
+
+.prodImgChildDiv{
+    display: flex;
+    flex-direction: column;
+    
+    
+}
+
+.prodImg{
+    background-color: azure;
+    margin-left: auto;
+  margin-right: auto;
+text-align: center;
+border-radius: 3%;
+box-shadow: 1px 1px 1px black;
+}
+
+.prodTextContainer{
+margin: 10px;
+}
+
+.prodName{
+    height: fit-content;
+    width: fit-content;
+    background-color: wheat;
+    margin-left: auto;
+  margin-right: auto
+}
+.prodDescription{
+    height: fit-content;
+    width: fit-content;
+    background-color: whitesmoke;
+    margin-left: auto;
+  margin-right: auto
+}
+
+.prodPrice{
+    height: fit-content;
+    width: fit-content;
+    background-color: whitesmoke;
+    margin-left: auto;
+  margin-right: auto
+}
+
+.prodButton{
+  box-shadow: 0px 10px 14px -7px #276873;
+	background-color:#599bb3;
+	border-radius:8px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:20px;
+	font-weight:bold;
+	padding:13px 32px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #3d768a;
+}
+.myButton:hover {
+	background-color:#408c99;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
 }

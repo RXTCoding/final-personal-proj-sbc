@@ -15,6 +15,7 @@ const handleRegister =()=>{
   axios.post('/api/register',{email,password})
   .then((res)=>{dispatch(setUser(res.data))
     axios.get('/api/mycart').then((response)=>{
+      console.log(response.data,"from auth js")
       dispatch(setCart(response.data))
       props.history.push('/products')
     })
@@ -25,13 +26,11 @@ const handleLogin= ()=>{
   axios.post('/api/login',{email, password})
   .then((res)=>{dispatch(setUser(res.data))
     axios.get('/api/mycart').then((response)=>{
+      console.log(response.data)
       dispatch(setCart(response.data))
       props.history.push('/products')
     })
   })
-}
-const handleLogout= ()=>{
-  axios.get('/api/logout')
 }
 
     return(
