@@ -27,6 +27,7 @@ const Cart = (props) => {
   const handleDeleteFromCart = (product_id)=>{
     axios.delete(`/api/delete/${product_id}`)
     .then((res)=>{
+      console.log(res.data)
       dispatch (setCart(res.data))
     }).catch(err=>{
       console.log(err)
@@ -60,14 +61,14 @@ const Cart = (props) => {
             <img className='cartImg' width='100px' height='150px' src={product.product_image} alt={product.product_name}/>
             <h4 className='cartH4'>{product.product_name}</h4>
             <h5> Qty: {product.quantity}</h5>
-            <button className='cartButton' onclick={()=> handleChangeQty(product.product_id,product.quantity - 1)}>-</button>
-            <button className='cartButton' onclick={()=>handleDeleteFromCart(product.product_id)}>X</button>
-            <button className='cartButton' onclick={()=> handleChangeQty(product.product_id, product.quantity + 1)}>+</button>
+            <button className='cartButton' onClick={()=> handleChangeQty(product.product_id,product.quantity - 1)}>-</button>
+            <button className='cartButton' onClick={()=>handleDeleteFromCart(product.product_id)}>X</button>
+            <button className='cartButton' onClick={()=> handleChangeQty(product.product_id, product.quantity + 1)}>+</button>
           </div>
         )
       })}
       <p> Total: </p>
-      <button> Check Out</button>
+      <button className='chkOutBttn'> Check Out</button>
     </div>
   )
 }

@@ -37,10 +37,12 @@ const handleLogin= ()=>{
       
     <div className='authParentDiv'>
       <h1>Auth Page</h1>
+    <section className='Authpage'>
     <input value={email} onChange={(e)=>setEmail(e.target.value)}/>
     <input value={password} onChange={(e)=>setPassword(e.target.value)}/>
     <button onClick={handleLogin}>Login</button>
     <button onClick={handleRegister}>Submit</button>
+    </section>
     </div>
   )
 }

@@ -7,7 +7,6 @@ module.exports={
         }
         console.log(user)
         db.cart.get_cart_items(user.cart_id).then(cart=>{
-            console.log(cart, "this is backend cart")
             res.status(200).send(cart)
         }).catch(err=>{
             console.log(err)
@@ -31,13 +30,13 @@ module.exports={
         })
     },
     deleteItemFromCart: (req,res)=>{
+        console.log('this is delte from cart')
         const db = req.app.get('db')
         const {user}= req.session
         const {product_id}= req.params //<-- anthing that deals with 'id' will be a parameter so use req.params to retrive that info
-        const {quantity}=req.body //<-- i added a quantity to see if it will delete from the cart js page
         if (!user){
             return res.status(511).send('user not logged in')
-        } db.cart.delete_item_from_cart(user.cart_id, product_id, quantity)
+        } db.cart.delete_item_from_cart(user.cart_id, product_id)
         .then((cart)=>{
             res.status(200).send(cart)
         }).catch(err=>{

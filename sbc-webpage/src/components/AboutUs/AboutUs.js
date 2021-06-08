@@ -1,9 +1,11 @@
 import './AboutUs.css'
 
-const AboutUs= (props)=>{
+const AboutUs= ()=>{
 
     return(
-        <div>About Us</div>
+        <div className='abtParentDiv'>
+        <h2>About Us</h2>
+        </div>
     )
 }
 
