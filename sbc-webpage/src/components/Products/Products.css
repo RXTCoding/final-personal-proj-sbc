@@ -152,3 +152,13 @@ margin: 10px;
   height: 60px;
   width: 250px;
 }
+
+@media(max-width: 995px){
+  .container{ 
+    width: 100%;
+    height: 100%;
+      display: block;
+      flex-direction: column;
+    }
+
+}

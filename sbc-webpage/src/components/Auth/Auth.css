@@ -12,3 +12,10 @@ border: 1px solid #222;
 margin-left: 50px;
 }
 
+@media(max-width: 995){
+    .authParentDiv{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+}

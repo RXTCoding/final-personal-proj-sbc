@@ -6,7 +6,7 @@ import {useDispatch} from 'react-redux'
 import {setUser} from './redux/authReducer'
 import {setCart} from './redux/cartReducer'
 import axios from 'axios'
-
+import Footer from './components/Footer/Footer'
 
 function App() {
   const dispatch = useDispatch()
@@ -23,6 +23,7 @@ function App() {
     <div className="App">
       <Header/>
       {routes}
+      <Footer/>
     </div>
   )
 }

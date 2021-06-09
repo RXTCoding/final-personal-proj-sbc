@@ -3,9 +3,11 @@ import './AboutUs.css'
 const AboutUs= ()=>{
 
     return(
-        <div className='abtParentDiv'>
-        <h2>About Us</h2>
-        </div>
+        <section className='abtParentDiv'>
+            <div className>
+                <h2>Who is Shida and her Broom Closet</h2>
+            </div>
+        </section>
     )
 }
 
