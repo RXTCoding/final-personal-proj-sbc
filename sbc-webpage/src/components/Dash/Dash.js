@@ -50,25 +50,25 @@ const Dash = (props) => {
   }
   return(
     
-    <div className='container'>
-      <h1>Welcome to <br/> Shida's Broom Closet</h1>
+    <div className='dashContainer'>
+      <h1>Welcome to <br/> Shida's Broom Closet<img height='50px' width='50px' src="https://media.giphy.com/media/fo2dhRTmaULbStoFkX/giphy.gif" alt='sparkle'/></h1>
       <div className='prodSerImgParent'>
-            <img width='30%' height='40%' src='https://shidas-broom-closet.s3.us-east-2.amazonaws.com/Book+a+Reading.PNG' alt='book a reading'/>
-            <img width='30%' height='40%' src='https://shidas-broom-closet.s3.us-east-2.amazonaws.com/book+a+yoga+session.PNG' alt=' book a yoga session'/>
-            <img width='30%' height='40%' src='https://shidas-broom-closet.s3.us-east-2.amazonaws.com/book+a+sound+SQR.PNG' alt= ' book a sound healing session'/>
+            <img className="dashImg" width='30%' height='40%' src='https://shidas-broom-closet.s3.us-east-2.amazonaws.com/Book+a+Reading.PNG' alt='book a reading'/>
+            <img className="dashImg" width='30%' height='40%' src='https://media.giphy.com/media/fUGNY6HT4yc3gURBaW/giphy.gif' alt=' book a yoga session'/>
+            <img className="dashImg" width='30%' height='40%' src='https://shidas-broom-closet.s3.us-east-2.amazonaws.com/book+a+sound+SQR.PNG' alt= ' book a sound healing session'/>
             </div>
       {products.map((product)=>{
         return(
-          <section className='prodParentDiv'>
-            <div className='prodContainer' key={product.product_id}>
-              <div className='prodImgChildDiv'>
-              <img className='prodImg' width='50%' height='60%' src={product.product_image} alt={product.product_name}/>
+          <section className='dashParentDiv'>
+            <div className='dashContainer' key={product.product_id}>
+              <div className='dashImgChildDiv'>
+              <img className='dashImg' width='50%' height='60%' src={product.product_image} alt={product.product_name}/>
               <div className='prodTextContainer'>
-              <h2 className='prodName'>{product.product_name}</h2>
-              <p className='prodDescription'>{product.product_description}</p>
-              <p className='prodPrice'>${product.price}</p>
+              <h2 className='dashName'>{product.product_name}</h2>
+              <p className='dashDescription'>{product.product_description}</p>
+              <p className='dashPrice'>${product.price}</p>
               </div>
-              <button className='prodButton' onClick={()=> handleAddToCart(product.product_id)}>Add To Cart</button>
+              <button className='dashButton' onClick={()=> handleAddToCart(product.product_id)}>Add To Cart</button>
               </div>
             </div>
             </section>

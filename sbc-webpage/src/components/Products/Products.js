@@ -5,6 +5,9 @@ import { useSelector } from 'react-redux'
 import {useDispatch} from 'react-redux'
 import {setCart} from '../../redux/cartReducer'
 import React from 'react'
+import {Link} from "react-router-dom"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import "./Products.css"
 
 const Products = (props) => {
@@ -24,7 +27,8 @@ const Products = (props) => {
   const handleAddToCart = (product_id)=> {
     console.log(product_id)
     console.log(cart)
-    const product = cart.find((product)=> product.product_id=== product_id) //<-- from cart. to products.
+    const product = cart.find((product)=> product.product_id=== product_id)
+    notify()//<-- adding toast
     console.log(product,'this is the product')
     if(!product){
       console.log(product)
@@ -41,6 +45,7 @@ const Products = (props) => {
       axios.put(`/api/newquantity/${product_id}`, {quantity: product.quantity+1})
       .then((res)=>{
         dispatch (setCart(res.data))
+        notify()//<-- adding toast
       }).catch(err=>{
         console.log(err)
         if (err.response.status=== 511){
@@ -50,22 +55,30 @@ const Products = (props) => {
     }
   }
 
+  toast.configure()
+
+  const notify= ()=>{
+    toast('Item added to cart!')
+  }
+
+
+
   return(
     <div className='container'>
       <h1>Welcome to <br/> Shida's Broom Closet</h1>
       <section className='prodSerImgParent'>
         <div className='bookSerDivs'>
-        <button className='serviceButton'>Book a Card Reading</button>
+        <Link to='/services/booknow'><button className='serviceButton'>Book a Card Reading</button></Link>
         <img className='prodSerImg' width='350px' height='350px' src='https://shidas-broom-closet.s3.us-east-2.amazonaws.com/Book+a+Reading.PNG' alt='book a reading'/>
         </div>
 
         <div className='bookSerDivs'>
-        <button className='serviceButton'>Book a Yoga Session</button>
+        <Link to='/services/booknow'><button className='serviceButton'>Book a Yoga Session</button></Link>
         <img className='prodSerImg' width='350px' height='350px' src='https://shidas-broom-closet.s3.us-east-2.amazonaws.com/book+a+yoga+session.PNG' alt=' book a yoga session'/>
         </div>
 
         <div className='bookSerDivs'>
-        <button className='serviceButton'>Book a Sound Bath</button>
+        <Link to='/services/booknow'><button className='serviceButton'>Book a Sound Bath</button></Link>
         <img className='prodSerImg' width='350px' height='350px' src='https://shidas-broom-closet.s3.us-east-2.amazonaws.com/book+a+sound+SQR.PNG' alt= ' book a sound healing session'/>
         </div>
       </section>

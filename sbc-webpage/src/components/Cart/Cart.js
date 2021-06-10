@@ -5,6 +5,8 @@ import {useState} from 'react'
 import './Cart.css'
 import axios from 'axios'
 import React from 'react'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Cart = (props) => {
   const {cart}= useSelector((store)=>store.cartReducer)
@@ -52,9 +54,15 @@ const Cart = (props) => {
       })
     }
   }
+
+  toast.configure()
+  const notify= ()=>{
+    toast('Hey Love, Thanks for your purchase. your items will be shipped in the next 2-3 business days!')
+  }
+
   return(
     <div className='cartParentDiv'>
-      <h1 className='cartH1'>Cart Page</h1>
+      <h1 className='cartH1'><img height='60px' width='60px' src='https://media.giphy.com/media/kcB9s9TNzzyLPgcrVX/giphy.gif' alt='crystal'/>My Cart<img height='60px' width='60px' src='https://media.giphy.com/media/L40qwPexZfBJLqSBaA/giphy.gif' alt='crystal'/></h1>
       {cart.map((product)=>{
         return(
           <div className='cartCkOutContainer' key={product.product_cart_id}>
@@ -68,7 +76,7 @@ const Cart = (props) => {
         )
       })}
       <p> Total: </p>
-      <button className='chkOutBttn'> Check Out</button>
+      <button className='chkOutBttn' onClick={notify}> Check Out</button>
     </div>
   )
 }

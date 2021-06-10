@@ -12,7 +12,7 @@ border: 1px solid #222;
 margin-left: 50px;
 } */
 
-.prodParentDiv{
+.dashParentDiv{
     box-sizing: border-box;
 width: 450px;
 height: 600px;
@@ -33,52 +33,53 @@ flex-wrap: wrap;
 padding: 10px;
 }
 
-.container{
+.dashContainer{
     display: inline-block;
+    
 }
 
 h1{
     text-align: center;
 }
 
-.prodContainer{
+.dashContainer{
     display: inline-block;
 }
 
-.prodSerImgParent{
+.dashSerImgParent{
     display: flex;
     justify-content: space-around;
     padding-top: 20px;
 }
 
-.prodImgChildDiv{
+.dashImgChildDiv{
     display: flex;
     flex-direction: column;
     
     
 }
 
-.prodImg{
-    background-color: azure;
+.dashImg{
+    background-color: transparent;
     margin-left: auto;
   margin-right: auto;
 text-align: center;
 border-radius: 3%;
-box-shadow: 1px 1px 1px black;
+/* box-shadow: 1px 1px 1px black; */
 }
 
-.prodTextContainer{
+.dashTextContainer{
 margin: 10px;
 }
 
-.prodName{
+.dashName{
     height: fit-content;
     width: fit-content;
     background-color: wheat;
     margin-left: auto;
   margin-right: auto
 }
-.prodDescription{
+.dashDescription{
     height: fit-content;
     width: fit-content;
     background-color: whitesmoke;
@@ -86,7 +87,7 @@ margin: 10px;
   margin-right: auto
 }
 
-.prodPrice{
+.dashPrice{
     height: fit-content;
     width: fit-content;
     background-color: whitesmoke;
@@ -94,7 +95,7 @@ margin: 10px;
   margin-right: auto
 }
 
-.prodButton{
+.dashButton{
   box-shadow: 0px 10px 14px -7px #276873;
 	background-color:#599bb3;
 	border-radius:8px;
@@ -114,4 +115,8 @@ margin: 10px;
 .myButton:active {
 	position:relative;
 	top:1px;
+}
+
+.dashImg{
+  border-radius: 5%;
 }

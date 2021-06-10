@@ -34,16 +34,27 @@ const handleLogin= ()=>{
 }
 
     return(
-      
     <div className='authParentDiv'>
-      <h1>Auth Page</h1>
+      
+      
     <section className='Authpage'>
-    <input value={email} onChange={(e)=>setEmail(e.target.value)}/>
-    <input value={password} onChange={(e)=>setPassword(e.target.value)}/>
-    <button onClick={handleLogin}>Login</button>
-    <button onClick={handleRegister}>Submit</button>
-    </section>
+    <h1>Create Your Account</h1>
+    <div className='input-filed'>
+    <input className='input' value={email} placeholder='Email' onChange={(e)=>setEmail(e.target.value)}/>
+    <input className='input' value={password} placeholder='Password' onChange={(e)=>setPassword(e.target.value)}/>
     </div>
+    
+    <div>
+    <button className="input-button" onClick={handleLogin}>Login</button>
+    <button className='input-button' onClick={handleRegister}>Register</button>
+    </div>
+    </section> 
+    </div>
+
+    
+
+
+
   )
 }
 

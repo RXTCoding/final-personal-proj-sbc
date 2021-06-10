@@ -30,10 +30,11 @@ const Header = (props) => {
         <Link to= '/aboutus' className='links'>About Us <FaBookReader/></Link>
         <Link to='/auth' className='links'>Login <GiEgyptianProfile/></Link>
         <Link to='/products' className='links'>Products <GiCrystalGrowth/></Link>
-        <Link to= '/services' className='links'>Book Now <BsFillStarFill/></Link>
+        <Link to= '/services/booknow' className='links'>Book Now <BsFillStarFill/></Link>
         <Link to='/mycart' className='links'>Cart <FaShoppingCart /></Link> 
         <Link to='/auth' className='links' onClick ={handleLogout}>Log Out <GiUfo/></Link>
       </header>
+      <button onClick={toggleMenu} className='drop-header-menu'>Menu <AiOutlineMenu/></button>
       {showMenu && <header className='nav-drop'>
       <img className='headerLogo' src='https://shidas-broom-closet.s3.us-east-2.amazonaws.com/andinkra+symbol+strength.PNG' alt='logo'/>
       <h4 className='headerH4'> FREE SHPPING ON ALL ORDERS OVER $45</h4>
@@ -41,11 +42,11 @@ const Header = (props) => {
       <Link to= '/aboutus' className='links-drop'>About Us <FaBookReader/></Link>
       <Link to='/auth' className='links-drop'>Login <GiEgyptianProfile/></Link>
       <Link to='/products' className='links-drop'>Products <GiCrystalGrowth/></Link>
-      <Link to= '/services' className='links-drop'>Book Now <BsFillStarFill/></Link>
+      <Link to= '/services/booknow' className='links-drop'>Book Now <BsFillStarFill/></Link>
       <Link to='/mycart' className='links-drop'>Cart <FaShoppingCart /></Link> 
       <Link to='/auth' className='links-drop' onClick ={handleLogout}>Log Out <GiUfo/></Link>
     </header>}
-    <button onClick={toggleMenu} className='drop-header-menu'>Menu <AiOutlineMenu/></button>
+    
   </section>
   )
 }
