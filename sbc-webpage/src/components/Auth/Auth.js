@@ -4,6 +4,8 @@ import {useState} from 'react'
 import {setUser} from '../../redux/authReducer'
 import {useDispatch} from 'react-redux'
 import {setCart} from '../../redux/cartReducer'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './Auth.css'
 
 const Auth = (props) => { //<-- be sure to pass props from state
@@ -12,6 +14,7 @@ const Auth = (props) => { //<-- be sure to pass props from state
   const dispatch = useDispatch()
 
 const handleRegister =()=>{
+  notifyReg()
   axios.post('/api/register',{email,password})
   .then((res)=>{dispatch(setUser(res.data))
     axios.get('/api/mycart').then((response)=>{
@@ -23,6 +26,7 @@ const handleRegister =()=>{
   .catch(err=> console.log(err))
 }
 const handleLogin= ()=>{
+  notifyLog()
   axios.post('/api/login',{email, password})
   .then((res)=>{dispatch(setUser(res.data))
     axios.get('/api/mycart').then((response)=>{
@@ -32,6 +36,16 @@ const handleLogin= ()=>{
     })
   })
 }
+
+toast.configure()
+  const notifyReg= ()=>{
+    toast('Hey Love, Thanks for registering! You can book a session with Shida!')
+  }
+
+  toast.configure()
+  const notifyLog= ()=>{
+    toast('Hey Love, you are now logged in. Yeay!')
+  }
 
     return(
     <div className='authParentDiv'>

@@ -9,17 +9,25 @@ import { FaBookReader} from "react-icons/fa"
 import { BsFillStarFill} from "react-icons/bs"
 import {AiOutlineMenu} from "react-icons/ai"
 import {useState} from 'react'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios'
 
 const Header = (props) => {
 
   const handleLogout= ()=>{
+    notifyLogOut()
     axios.get('/api/logout')
   }
 
   const [showMenu,setshowMenu]=useState(false)
 
   const toggleMenu= ()=>setshowMenu(!showMenu)
+
+  toast.configure()
+  const notifyLogOut= ()=>{
+    toast('You are now logged out. Come back and Experience the Magic soon!')
+  }
 
   return(
     <section>

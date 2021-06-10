@@ -45,7 +45,6 @@ const Products = (props) => {
       axios.put(`/api/newquantity/${product_id}`, {quantity: product.quantity+1})
       .then((res)=>{
         dispatch (setCart(res.data))
-        notify()//<-- adding toast
       }).catch(err=>{
         console.log(err)
         if (err.response.status=== 511){
@@ -56,9 +55,13 @@ const Products = (props) => {
   }
 
   toast.configure()
-
   const notify= ()=>{
     toast('Item added to cart!')
+  }
+
+  toast.configure()
+  const notifyQnt= ()=>{
+    toast('Additional item added')
   }
 
 
