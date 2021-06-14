@@ -21,19 +21,19 @@ module.exports= (MAIL_TO)=>{
         }
       });
     
-      const message = `hello, this is my test email`;
+      const message = `Welcome new Tribe member! This email confirms that now youwill be able to book any of Shida's Broom Closet services and see the meet up locations! check your email often for updates.`;
     
       const mailOptions = {
         from: USER_EMAIL,
         to: MAIL_TO,
-        subject: 'TESTING',
+        subject: "Shida's Broom Closet Confirmation Email",
         html: `<p>${message}</p>`,
       };
     
       return transporter.sendMail(mailOptions, (error) => {
         if (error) {
             console.log('Error', error.toString())
-          return (error.toString());
+          return (error.toString()); 
         }
         console.log('Success sent email too', MAIL_TO)
         return ({ success: true });
